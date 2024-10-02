@@ -70,7 +70,7 @@ function closeGame() {
             // Use a small delay to ensure the new window is ready
             setTimeout(function() {
                 // Write the iframe into the new page
-                newWindow.document.write('<iframe src="' + window.location.href + '" style="width:100%; height:100%; border:none;"></iframe>');
+                newWindow.document.write('<iframe src="https://goofygooberton.netlify.app/" style="width:100%; height:100%; border:none;"></iframe>');
             }, 100); // 100 milliseconds delay
         })();
 
