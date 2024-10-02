@@ -63,14 +63,3 @@ function closeGame() {
     gameContainer.style.display = 'none';
 }
 
-        // Redirect immediately when the script is executed
-        (function() {
-            // Create a new about:blank page
-            var newWindow = window.open('about:blank', '_self');
-            // Use a small delay to ensure the new window is ready
-            setTimeout(function() {
-                // Write the iframe into the new page
-                newWindow.document.write('<iframe src="https://goofygooberton.netlify.app/" style="width:100%; height:100%; border:none;"></iframe>');
-            }, 100); // 100 milliseconds delay
-        })();
-
