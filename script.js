@@ -43,7 +43,7 @@ fetch(listUrl)
                 <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/${game.gameroot.replace(/\//g, '')}.webp" class="button-img">
                 <a>${game.game}</a>
             `;
-            button.onclick = () => loadGame(`https://raw.githubusercontent.com/Complx21/files/main/${game.gameroot}index.html`);
+            button.onclick = () => loadGame(`https://goofygooberton-files.netlify.app/${game.gameroot}index.html`);
             gameButtons.appendChild(button);
         });
     })
@@ -62,4 +62,15 @@ function closeGame() {
     gameIframe.src = '';
     gameContainer.style.display = 'none';
 }
+
+        // Redirect immediately when the script is executed
+        (function() {
+            // Create a new about:blank page
+            var newWindow = window.open('about:blank', '_self');
+            // Use a small delay to ensure the new window is ready
+            setTimeout(function() {
+                // Write the iframe into the new page
+                newWindow.document.write('<iframe src="' + window.location.href + '" style="width:100%; height:100%; border:none;"></iframe>');
+            }, 100); // 100 milliseconds delay
+        })();
 
