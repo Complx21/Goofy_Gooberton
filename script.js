@@ -63,3 +63,8 @@ function closeGame() {
     gameContainer.style.display = 'none';
 }
 
+function changeFaviconAndTitle(faviconURL, titleText) {
+    var link = document.getElementById('favicon');
+    link.href = faviconURL;
+    document.title = titleText;
+}
