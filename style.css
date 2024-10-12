@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
+
 html {
     scrollbar-width: none;
 }
+
 
 body, html {
     margin: 0;
@@ -12,6 +14,9 @@ body, html {
     color: #e0e0e0;
     overflow-x: hidden;
     transition: background-color 0.3s, color 0.3s;
+    scrollbar-width: none;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -19,8 +24,9 @@ body, html {
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
-    width: 100%;
-    padding: 15px 20px;
+    width: 98.5%;
+    padding: 5px 10px;
+    border-radius: 13px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 1;
     display: flex;
@@ -73,6 +79,23 @@ body, html {
     padding: 100px 20px 20px;
     max-width: 1200px;
     margin: auto;
+    padding-bottom: 13px;
+}
+
+.container-header {
+    padding-top: ;
+    top: 100px;
+    padding: 20px 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 13px;
+    border-color: #bb86fc;
+    border: 3px solid;
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+    justify-content: space-around;
+    position: relative;
 }
 
 .tab-content {
@@ -81,6 +104,8 @@ body, html {
 
 .tab-content.active {
     display: block;
+    height: 100vh;
+    width: 100vw;
 }
 
 .button {
@@ -110,7 +135,20 @@ body, html {
     width: 100%;
     max-width: 400px;
     padding: 12px;
-    border-radius: 25px;
+    border-radius: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    box-sizing: border-box;
+    background: rgba(33, 33, 33, 0.8);
+    color: #e0e0e0;
+    backdrop-filter: blur(8px);
+}
+
+.key-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border-radius: 13px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 16px;
     box-sizing: border-box;
@@ -158,7 +196,7 @@ footer {
     padding: 40px 20px;
     text-align: center;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
-    margin-top: 40px;
+    position: relative;
 }
 
 footer a {
@@ -206,7 +244,6 @@ h1 {
 
 .settings-panel button {
     display: block;
-    width: 100%;
     padding: 10px;
     margin: 5px 0;
     border: none;
@@ -257,7 +294,7 @@ a {
 
 h4 {
     font-family: "Comfortaa", sans-serif;
-=}
+}
 
 h3 {
     font-family: "Comfortaa", sans-serif;
@@ -287,6 +324,10 @@ p {
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    justify-content: space-between;
+    border-color: #bb86fc;
+    border: 3px solid;
+    color: #bb86fc;
 }
 
 .game-grid {
@@ -352,9 +393,64 @@ img {
     padding: 3px;
     background-color: #1e1e1e;
     border-radius: 13px;
+    position: relative;
 }
 
-.favicon-button img {
-    width: 10px;
-    height: 10px;
+.favicon-button-img {
+    width: 24px;
+    height: 24px;
 }
+
+.rgbborders {
+    border: 1px solid;
+    border-color: ()
+}
+
+.settings-button-panel {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    width: 100%;
+}
+
+.button-line {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+
+.note {
+    color: #7f8080;
+    size: 13px;
+}
+
+.chat-container {
+    border-radius: 24px;
+    border: 3px solid;
+    padding: 13px;
+    max-width: ;
+    background-color: ;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(33, 33, 33, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+}
+
+.chat-input {
+    border-radius: 24px;
+    border: 3px solid;
+    padding: 13px;
+    max-width: 6000px;
+    width: ;
+    background-color: #121212;
+    
+}
+
+border-color: #bb86fc;
