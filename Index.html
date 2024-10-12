@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link id="favicon" rel="icon" href="none">
 </head>
 <body class="dark-theme">
-
+<center>
 <!-- Navbar -->
 <div class="navbar">
     <div class="nav-links">
         <a href="#" onclick="showContent('landing')">Landing</a>
-        <a href="#" onclick="showContent('about')">About</a>
+        <a href="#" onclick="showContent('chat')">Chat</a>
         <a href="#" onclick="showContent('games')">Games</a>
         <a href="#" onclick="showContent('sites')">Sites</a>
     </div>
@@ -23,34 +24,69 @@
         <i class="fas fa-cog"></i>
     </button>
 </div>
+</center>
+
 
 <!-- Settings Panel -->
  <center>
 <div class="settings-panel" id="settingsPanel">
     <h2>Settings</h2>
-    <button class="light-theme" onclick="setTheme('light')">Light Theme</button>
-    <button class="dark-theme" onclick="setTheme('dark')">Dark Theme</button>
+    <button class="light-theme settings-button-panel" onclick="setTheme('light')">Light Theme</button>
+    <button class="dark-theme settings-button-panel" onclick="setTheme('dark')">Dark Theme</button>
     <h3>Tab</h3>
-    <button class="favicon-button"></button>
-    <h3>Panic</h3>
+    <div class="button-line">
+    <button class="favicon-button">
+        <img src="icons/canvas.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/canvas.png', 'Canvas')">
+    </button>
+    <button class="favicon-button">
+        <img src="icons/classroom.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/classroom.png', 'Classroom')">
+    </button>
+    <button class="favicon-button">
+        <img src="icons/noredinc.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/noredinc.png', 'NoRedInk')">
+    </button>
+    <button class="favicon-button">
+        <img src="icons/google.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/google.png', 'Google')">
+    </button>
 </div>
-</center
+    <h3>Panic</h3>
+    <input type="text" class="key-input" placeholder="Type key here"></input>
+    <i><p class="note">*the panic key redirects you to the icon you set your tab to (for example, if you set your tab icon to the Google Classroom icon then it will redirect you to Google Classroom when pressed)</p></i>
+</div>
+</center>
 
 <!-- Content Divs -->
 <div id="landing" class="tab-content active">
-    <header class="container" style="text-align: center;">
+    <header class="container-header">
         <h1>Goofy Gooberton</h1>
         <p style="font-size: 1.5em; color: #bbb;">Best Unblocked Games Playground</p>
         <a class="button" href="https://scratch.mit.edu/users/complx" target="_blank">My Scratch</a>
     </header>
-    <div class="container" style="background-color: #1e1e1e; padding: 40px; border-radius: 25px;">
+    <div style="padding-top: ;top: 200px;padding: 20px 20px;max-width: 1200px;margin: auto;padding-bottom: 13px;border-radius: 25px;position: relative;background-color: #1e1e1e;">
+        <div style="display: grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));gap: 30px;padding: 20px;">
+    <button class="game-card">
+        <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/TunnelRush.webp" class="button-img" style="height:170px;width:159.23px;">
+        <a>Tunnel Rush</a>
+    </button>
+    <button class="game-card">
+        <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/DriveMad.webp" class="button-img" style="height:170px;width:159.23px;">
+        <a>Drive Mad</a>
+    </button>
+    <button class="game-card">
+        <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/DriveMad.webp" class="button-img" style="height:170px;width:159.23px;">
+        <a>Drive Mad</a>
+    </button>
     </div>
 </div>
+</div>
 
-<div id="about" class="tab-content">
+<div id="chat" class="tab-content">
     <div class="container">
-        <h1>About Us</h1>
-        <p></p>
+        <h1>Chat</h1>
+        <div class="chat-container">
+        <input type="text" placeholder="type a message" class="chat-input"></input>
+        <span class="mesage-submit"></span>
+    </div>
+        <p> </p>
     </div>
 </div>
 
@@ -58,7 +94,7 @@
     <div class="container">
         <h1>Games</h1>
         <div class="search-container">
-            <input type="text" class="search-bar" id="searchBar" placeholder="Search for games..." onkeyup="filterGames()">
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search for games..." onkeyup="filterGames()"></input>
             <div class="game-grid" id="game-buttons"></div>
             <div id="game-container" class="iframe-container" style="display:none;">
                 <span class="material-symbols-outlined close-button" onclick="closeGame()">close</span>
