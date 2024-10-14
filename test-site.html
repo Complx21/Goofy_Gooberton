@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Multiple CSS and JS from GitHub</title>
+    <style>
+        .content {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="content"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainFileName = 'index.html'; // Change this to your main HTML file
+            const baseURL = 'https://raw.githubusercontent.com/RobertTBS/slowroads/main/';
+
+            function fetchAndInject(url, type) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        if (type === 'css') {
+                            const style = document.createElement('style');
+                            style.textContent = data;
+                            document.head.appendChild(style);
+                        } else if (type === 'js') {
+                            const script = document.createElement('script');
+                            script.textContent = data;
+                            document.body.appendChild(script);
+                        }
+                    })
+                    .catch(error => console.error(`Error loading ${type.toUpperCase()}:`, error));
+            }
+
+            // Fetch and inject HTML
+            fetch(baseURL + mainFileName)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    document.getElementById('content').innerHTML = doc.body.innerHTML;
+
+                    // Fetch and inject all linked CSS and JS files
+                    doc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                        fetchAndInject(baseURL + link.getAttribute('href'), 'css');
+                    });
+
+                    doc.querySelectorAll('script[src]').forEach(script => {
+                        fetchAndInject(baseURL + script.getAttribute('src'), 'js');
+                    });
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        });
+    </script>
+</body>
+</html>
