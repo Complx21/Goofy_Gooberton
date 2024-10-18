@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link id="favicon" rel="icon" href="none">
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send" /></head>
 <body class="dark-theme">
 <center>
 <!-- Navbar -->
 <div class="navbar">
     <div class="nav-links">
         <a href="#" onclick="showContent('landing')">Landing</a>
-        <a href="#" onclick="showContent('chat')">Chat</a>
+        <a href="#" onclick="showContent('feedback')">Feedback</a>
         <a href="#" onclick="showContent('games')">Games</a>
         <a href="#" onclick="showContent('sites')">Sites</a>
     </div>
@@ -28,13 +28,14 @@
 
 <!-- Modal-->
 
+<!--
 <div id="modal" class="modal">
     <div class="modal-content">
         <span class="close-btn" id="closeBtn">&times;</span>
         <p>This is a modal window.</p>
     </div>
 </div>
-
+-->
 
 <!-- Settings Panel -->
  <center>
@@ -42,35 +43,49 @@
     <h2>Settings</h2>
     <button class="light-theme settings-button-panel" onclick="setTheme('light')">Light Theme</button>
     <button class="dark-theme settings-button-panel" onclick="setTheme('dark')">Dark Theme</button>
-    <h3>Tab</h3>
+    <h2>Tab</h2>
     <div class="button-line">
     <button class="favicon-button">
-        <img src="icons/canvas.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/canvas.png', 'Canvas')">
+        <img src="icons/canvas.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/canvas.png', 'Canvas'); setFavicon('icons/canvas.png', 'https://www.canvas.instructure.com/'); ">
     </button>
     <button class="favicon-button">
-        <img src="icons/classroom.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/classroom.png', 'Classroom')">
+        <img src="icons/classroom.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/classroom.png', 'Classroom'); setFavicon('icons/classroom.png', 'https://classroom.google.com/'); ">
     </button>
     <button class="favicon-button">
-        <img src="icons/noredinc.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/noredinc.png', 'NoRedInk')">
+        <img src="icons/noredinc.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/noredinc.png', 'NoRedInk'); setFavicon('icons/classroom.png', 'https://classroom.google.com/'); ">
     </button>
     <button class="favicon-button">
-        <img src="icons/google.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/google.png', 'Google')">
+        <img src="icons/google.png" class="favicon-button-img" onclick="changeFaviconAndTitle('icons/google.png', 'Google'; setFavicon('icons/noredinc.png', 'https://noredinc.com/'); )">
     </button>
 </div>
-    <h3>Panic</h3>
-    <input type="text" class="key-input" placeholder="Type key here"></input>
-    <i><p class="note">*the panic key redirects you to the icon you set your tab to (for example, if you set your tab icon to the Google Classroom icon then it will redirect you to Google Classroom when pressed)</p></i>
+<div class="blur">
+    <h2>Panic</h2>
+    <input type="text" class="key-input" id="key-input" placeholder="Type key here" maxlength="1"></input>
+    <i><p class="note">*The panic key redirects to google classroom when clicked, this will be changed later to redirect to the site that your tab
+        icon is set to, but it has not been added yet.
+    </p></i>
+</div>
 </div>
 </center>
+
+
+<!-- this is the text to maybe add later
+ 
+the panic key redirects you to the icon you set your tab to 
+(for example, if you set your tab icon to the Google Classroom icon then it will redirect you to Google Classroom when pressed)
+
+
+-->
+
 
 <!-- Content Divs -->
 <div id="landing" class="tab-content active">
     <header class="container-header">
         <h1>Goofy Gooberton</h1>
-        <p style="font-size: 1.5em; color: #bbb;">Best Unblocked Games Playground</p>
+        <p id="random-text" style="cursor: pointer;">Best Unblocked Games Playground</p>
         <a class="button" href="https://scratch.mit.edu/users/complx" target="_blank">My Scratch</a>
     </header>
-    <div style="top: 200px;padding: 20px 20px;max-width: 1200px;margin: auto;padding-bottom: 13px;border-radius: 25px;position: relative;background-color: #1e1e1e;">
+    <div class="container">
         <div style="display: grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));gap: 30px;padding: 20px;">
     <button class="game-card">
         <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/TunnelRush.webp" class="button-img" style="height:170px;width:159.23px;">
@@ -81,13 +96,81 @@
         <a>Drive Mad</a>
     </button>
     <button class="game-card">
-        <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/DriveMad.webp" class="button-img" style="height:170px;width:159.23px;">
-        <a>Drive Mad</a>
+        <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/1v1lol.webp" class="button-img" style="height:170px;width:159.23px;">
+        <a>1v1lol</a>
     </button>
-    </div>
+    <button class="game-card">
+        <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/RetroBowl.webp" class="button-img" style="height:170px;width:159.23px;">
+        <a>Retro Bowl</a>
+    </button>
+    <button class="game-card">
+        <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/BasketRandom.webp" class="button-img">
+        <a>Basket Random</a>
+    </button>
+</div>
+</div>
+<div class="container" style="background-color: transparent;">
+<button onclick="showContent('feedback')" class="game-card">
+    <img src="icons/feedback_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png">
+</button>
+
+<button onclick="showContent('games')" class="game-card">
+    <img src="icons/apps_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png">
+</button>
 </div>
 </div>
 
+
+<div id="feedback" class="tab-content">
+    <div class="container">
+        <h1>Upcoming Features</h1>
+        
+            <h4>
+            - Chat
+            </h4>
+            <h4>
+            - Minecraft server
+            </h4>
+            <h4>
+            - New ui designs (taken from feedback ideas)
+            </h4>
+            <h4>
+            - RGB button borders
+            </h4>
+            <h4>
+            - new games
+            </h4>
+            <h4>
+            - more sites (possibly shell shockers)
+            </h4>
+            <h4>
+            - Improved light theme
+            </h4>
+            <h4>
+            - Live events
+            </h4>
+            <h4>
+            - Completely redone UI
+            </h4>
+            <h4>
+            - More customization options
+            </h4>
+            <h4>
+            - (I'll put more ideas here :)
+            </h4>
+</h4>
+        <p> </p>
+    </div>
+    <div class="feedback-container">
+        <input type="text" placeholder="give feedback..." class="chat-input"></input>
+        <span class="material-symbols-outlined" style="cursor:pointer;position:fixed;top:27.93499%;left:89.993%;">
+            send
+            </span>
+    </div>
+</div>
+
+
+<!-- old chat
 <div id="chat" class="tab-content">
     <div class="container">
         <h1>Chat</h1>
@@ -98,20 +181,21 @@
         <p> </p>
     </div>
 </div>
+-->
 
 <div id="games" class="tab-content">
+    <div id="game-container" class="iframe-container" style="display:none;">
+        <span class="material-symbols-outlined close-button" onclick="closeGame()">close</span>
+        <iframe id="game-iframe"></iframe>
+    </div>
     <div class="container">
         <h1>Games</h1>
         <div class="search-container">
             <input type="text" class="search-bar" id="searchBar" placeholder="Search for games..." onkeyup="filterGames()"></input>
             <div class="game-grid" id="game-buttons"></div>
-            <div id="game-container" class="iframe-container" style="display:none;">
-                <span class="material-symbols-outlined close-button" onclick="closeGame()">close</span>
-                <iframe id="game-iframe"></iframe>
-            </div>
         </div>
-        <button class="feedback-button" onclick="openBtn"><a>Suggest a game</a></button>
     </div>
+   <!-- <button class="feedback-button" onclick="openBtn"><a>Suggest a game</a></button> -->
 </div>
 
 <div id="sites" class="tab-content">
@@ -126,13 +210,10 @@
     </div>
 </div>
 </body>
-
 <div class="footer"> 
     <p>Check out my other links.</p> 
     <a href="https://scratch.mit.edu/users/Complx" target="_blank">Scratch</a> 
     <a href="https://replit.com/@Complx" target="_blank">Replit</a> 
     <a href="https://github.com/Complx21" target="_blank">Github</a> 
 </div>
-
 </html>
- 
