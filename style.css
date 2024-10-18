@@ -60,8 +60,6 @@ body, html {
 
 .navbar .settings-button {
     font-size: 18px;
-    width: 18px;
-    height: 18px;
     background-color: transparent;
     border: none;
     cursor: pointer;
