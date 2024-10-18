@@ -89,3 +89,46 @@ window.onclick = function(event) {
         document.body.classList.remove('blur');
     }
 }
+
+const redirectUrl = 'https://classroom.google.com/';
+
+function checkKeyInput() {
+    const input = document.getElementById('key-input').value.toLowerCase();
+    if (input) {
+        window.location.href = redirectUrl;
+    }
+}
+
+document.getElementById('key-input').addEventListener('input', function() {
+    checkKeyInput();
+});
+
+// let selectedFaviconUrl = '';
+
+// function setFavicon(icon, url) {
+//     console.log("Set Favicon called with icon:", icon, "and URL:", url); // Debugging line
+//    const link = document.querySelector("link[rel~='icon']");
+//     if (link) {
+//         link.href = icon;
+//    } else {
+//        const newLink = document.createElement('link');
+//        newLink.rel = 'icon';
+//        newLink.href = icon;
+//       document.head.appendChild(newLink);
+//    }
+//   selectedFaviconUrl = url;
+//   console.log("Favicon set:", icon, "URL set:", url); // Debugging line
+// }
+
+// function checkFaviconAndRedirect() {
+//     console.log("Current selected URL:", selectedFaviconUrl); // Debugging line
+//    if (selectedFaviconUrl) {
+//         window.location.href = selectedFaviconUrl;
+//     } else {
+//         console.log("No URL set."); // Debugging line
+//     }
+// }
+// 
+// document.getElementById('key-input').addEventListener('input', function() {
+//     checkFaviconAndRedirect();
+// });
