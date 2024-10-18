@@ -537,3 +537,7 @@ img {
     filter: blur(5px);
 }
 
+.blur-tab {
+    filter: blur(28px);
+}
+
