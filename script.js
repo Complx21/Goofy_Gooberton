@@ -43,7 +43,7 @@ fetch(listUrl)
                 <img src="https://raw.githubusercontent.com/Complx21/files/main/Icons/${game.gameroot.replace(/\//g, '')}.webp" class="button-img">
                 <a>${game.game}</a>
             `;
-            button.onclick = () => loadGame(`https://goofygooberton-files.netlify.app/${game.gameroot}index.html`);
+            button.onclick = () => loadGame(`https://raw.githubusercontent.com/Complx21/files/main/${game.gameroot}/index.html`);
             gameButtons.appendChild(button);
         });
     })
