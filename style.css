@@ -418,6 +418,7 @@ img {
     left: 10px;
     cursor: pointer;
     z-index: 10;
+    mix-blend-mode: darken;
 }
 
 .favicon-button {
