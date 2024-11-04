@@ -307,8 +307,8 @@ h1 {
     .navbar a {
         font-size: 14px;
         padding: 8px 15px;
+        cursor: pointer;
     }
-}
 
 a {
     font-family: "Comfortaa", sans-serif;
@@ -418,7 +418,7 @@ img {
     left: 10px;
     cursor: pointer;
     z-index: 10;
-    mix-blend-mode: darken;
+    mix-blend-mode: difference;
 }
 
 .favicon-button {
