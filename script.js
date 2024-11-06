@@ -1,3 +1,4 @@
+
 function showContent(id) {
     var contents = document.querySelectorAll('.tab-content');
     for (var i = 0; i < contents.length; i++) {
@@ -69,27 +70,6 @@ function changeFaviconAndTitle(faviconURL, titleText) {
     document.title = titleText;
 }
 
-const modal = document.getElementById('modal');
-const openBtn = document.getElementById('openBtn');
-const closeBtn = document.getElementById('closeBtn');
-
-openBtn.onclick = function() {
-    modal.style.display = 'flex';
-    document.body.classList.add('blur');
-}
-
-closeBtn.onclick = function() {
-    modal.style.display = 'none';
-    document.body.classList.remove('blur');
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-        document.body.classList.remove('blur');
-    }
-}
-
 const redirectUrl = 'https://classroom.google.com/';
 
 function checkKeyInput() {
@@ -132,3 +112,17 @@ document.getElementById('key-input').addEventListener('input', function() {
 // document.getElementById('key-input').addEventListener('input', function() {
 //     checkFaviconAndRedirect();
 // });
+
+const randomTexts = [
+    'Hello World!',
+    'Click me again!',
+    'Random text here!',
+    'Surprise text!',
+    'You clicked me!'
+];
+
+// Function to change the link text to a random one
+function randomizeText() {
+    const randomIndex = Math.floor(Math.random() * randomTexts.length);
+    document.getElementById('random-link').innerText = randomTexts[randomIndex];
+}
