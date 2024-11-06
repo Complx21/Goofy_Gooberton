@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link id="favicon" rel="icon" href="none">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send" /></head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send" />
+</head>
 <body class="dark-theme">
 <center>
 <!-- Navbar -->
@@ -57,6 +58,7 @@
     <button class="favicon-button">
         <img src="https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/google.png" class="favicon-button-img" onclick="changeFaviconAndTitle('https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/google.png', 'Google'); setFavicon('icons/noredinc.png', 'https://noredinc.com/'); ">
     </button>
+    <span class="settings-back" onclick="toggleSettingsPanel()"><img src="https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/back-arrow.png"></span>
 </div>
 <div class="blur">
     <h2>Panic</h2>
@@ -82,7 +84,7 @@ the panic key redirects you to the icon you set your tab to
 <div id="landing" class="tab-content active">
     <header class="container-header">
         <h1>Goofy Gooberton</h1>
-        <p id="random-text" style="cursor: pointer;">Best Unblocked Games Playground</p>
+        <p id="random-link" onclick="randomizeText(); return false;" style="cursor: pointer;">Best Unblocked Games Playground</p>
         <a class="button" href="https://scratch.mit.edu/users/complx" target="_blank">My Scratch</a>
     </header>
     <div class="container">
@@ -186,8 +188,8 @@ the panic key redirects you to the icon you set your tab to
 <div id="games" class="tab-content">
     <div id="game-container" class="iframe-container" style="display:none;">
         <h3>
-        <span class="close-button" onclick="closeGame()"><img src="https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/close.png"></span>
-            </h3>
+        <span onclick="closeGame()" class="close-btn"><img src="https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/close.png"></span>   
+    </h3>
         <iframe id="game-iframe"></iframe>
     </div>
     <div class="container">
@@ -206,11 +208,12 @@ the panic key redirects you to the icon you set your tab to
        <center>
         <h1>Sites</h1>
         <p>Explore some other unblocked websites:</p>
-        <button class="button" target="_blank">Example.com</button>
+        <button class="button">Example.com</button>
         <a class="button" href="https://anotherexample.com" target="_blank">AnotherExample.com</a>
         <a class="button" href="https://yetanotherexample.com" target="_blank">YetAnotherExample.com</a>
        </center>
     </div>
+
 </div>
 <div class="container" style="background-color:transparent;top:200px;">
 <h3 class="note">Sorry this part of the site is still under development, check again later to access some more unblocked sites. While you wait maybe go request some sites in the feedback to add. :)</h3>
