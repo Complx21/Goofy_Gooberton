@@ -93,7 +93,7 @@ body, html {
 }
 
 .container-header {
-    padding-top: ;
+    padding-top: 0;
     top: 100px;
     padding: 20px 20px;
     max-width: 1200px;
@@ -117,7 +117,7 @@ body, html {
     display: block;
     width: 100vw;
     height: 100vh;
-    margin: ;
+    margin: none;
     padding-bottom: 0;
     justify-content: space-between;
 }
@@ -466,8 +466,6 @@ img {
     border-radius: 24px;
     border: 3px solid;
     padding: 5px;
-    max-width: ;
-    background-color: ;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     background: rgba(33, 33, 33, 0.8);
@@ -530,9 +528,20 @@ img {
 .close-btn {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 20px;
     font-size: 20px;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
+    background: rgba(60, 58, 58, 0.085);
+    backdrop-filter: blur(13px);
+    z-index: 9999;
+    padding: 13px;
+    border-radius: 13px;
+}
+
+.close-btn-image {
+    mix-blend-mode: darken;
 }
 
 .blur {
@@ -541,4 +550,18 @@ img {
 
 .blur-tab {
     filter: blur(28px);
+}
+
+.settings-close {
+    position: fixed;
+
+}
+
+.settings-back {
+    position: fixed;
+    left: 13px;
+    bottom: 43px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
 }
