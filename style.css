@@ -90,7 +90,7 @@ body, html {
     border-radius: 25px;
     position: relative;
     bottom: 13px;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .container-header {
