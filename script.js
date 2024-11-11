@@ -121,10 +121,10 @@ const randomTexts = [
     'You clicked me!'
 ];
 
-window.onload = randomizeText() {
-const randomIndex = Math.floor(Math.random() * randomTexts.length);
-    document.getElementById('random-link').innerText = randomTexts[randomIndex];
-};
+//window.onload = randomizeText() {
+//const randomIndex = Math.floor(Math.random() * randomTexts.length);
+//    document.getElementById('random-link').innerText = randomTexts[randomIndex];
+//};
 
 
 // Function to change the link text to a random one
