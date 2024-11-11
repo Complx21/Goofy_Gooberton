@@ -121,8 +121,14 @@ const randomTexts = [
     'You clicked me!'
 ];
 
-// Function to change the link text to a random one
-function randomizeText() {
-    const randomIndex = Math.floor(Math.random() * randomTexts.length);
+window.onload = function() {
+const randomIndex = Math.floor(Math.random() * randomTexts.length);
     document.getElementById('random-link').innerText = randomTexts[randomIndex];
-}
+};
+
+
+// Function to change the link text to a random one
+//function randomizeText() {
+  //  const randomIndex = Math.floor(Math.random() * randomTexts.length);
+  //  document.getElementById('random-link').innerText = randomTexts[randomIndex];
+//}
