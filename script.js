@@ -114,11 +114,10 @@ document.getElementById('key-input').addEventListener('input', function() {
 // });
 
 const randomTexts = [
-    'Hello World!',
-    'Click me again!',
-    'Random text here!',
-    'Surprise text!',
-    'You clicked me!'
+    'Shell Shockers coming soon!',
+    'V2 coming!',
+    'THIS IS NOT A COPY, IT IS ORIGINAL WORK',
+    'Fun website'
 ];
 
 //window.onload = randomizeText() {
