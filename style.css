@@ -90,7 +90,8 @@ body, html {
     border-radius: 25px;
     position: relative;
     bottom: 13px;
-    justify-content: space-around;
+    justify-content:space-between;
+    gap: 100px;
 }
 
 .container-header {
@@ -341,19 +342,33 @@ p {
 
 
 .game-card:hover {
-    transform: scale(1.05);
-    background-color: #9b59b6;
+    border-radius: 48px;
+background: #121212;
+box-shadow: inset 12px 12px 24px #070707,
+            inset -12px -12px 24px #1d1d1d;
+                transform: translateY(4px);
+                transition: transform 0.3s ease;
+                transition: border-radius 0.5s ease; /* Smooth transition for border-radius */
+}
+
+.game-card:hover img{
+    border-radius: 48px;
+    transition: border-radius 0.5s ease; /* Smooth transition for border-radius */
 }
 
 .game-card {
-    background-color: #1e1e1e;
-    border-radius: 12px;
+    border-radius: 48px;
+background: linear-gradient(145deg, #131313, #101010);
+box-shadow:  12px 12px 24px #070707,
+             -12px -12px 24px #1d1d1d;
+                     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease;
     justify-content: space-between;
-    border-color: #bb86fc;
-    border: 3px solid;
-    color: #bb86fc;
+    /*border-color: #bb86fc; */
+    /* border: 3px solid; */
+    transition: border-radius 0.5s ease; /* Smooth transition for border-radius */
+    /* color: #bb86fc; */
+    transition: transform 0.3s ease;
 }
 
 .game-grid {
@@ -385,16 +400,18 @@ img {
     width: 100%;
     height: 100%;
     border-radius: 12px;
+    transition: border-radius 0.5s ease; /* Smooth transition for border-radius */
 }
 
 .iframe-container iframe {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     border: none;
     z-index: 9;
+    border-radius: 13px;
+    height: 100vh;
+    width: 100vw;
 }
 
 .iframe-container {
@@ -404,7 +421,8 @@ img {
     width: 100vw;
     height: 100vh;
     border: none;
-    z-index: 9
+    z-index: 9;
+    background-color: #121212;
 }
 
 .game-window {
@@ -567,3 +585,35 @@ img {
     width: 30px;
     cursor: pointer;
 }
+
+.neumorphism-btn {
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 48px;
+background: #121212;
+box-shadow:  24px 24px 42px #090909,
+             -24px -24px 42px #1b1b1b;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth animation for the transition */
+  }
+  
+  .neumorphism-btn:hover {
+    border-radius: 48px;
+background: #121212;
+box-shadow: inset 24px 24px 42px #090909,
+            inset -24px -24px 42px #1b1b1b;
+            transform: translateY(2px);
+
+  }
+  
+  .neumorphism-btn:focus {
+    outline: none;
+  }
+  
+  .neumorphism-btn:active {
+    transform: translateY(2px);
+  }
+  
