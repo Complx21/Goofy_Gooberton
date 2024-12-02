@@ -1,3 +1,22 @@
+const randomTexts = [
+    'Shell Shockers coming soon!',
+    'V2 coming!',
+    //'THIS IS NOT A COPY, IT IS ORIGINAL WORK',
+    'Fun website',
+    'Read the notes that are placed around the site (They are there for a reason)'
+];
+
+//window.onload = randomizeText() {
+//const randomIndex = Math.floor(Math.random() * randomTexts.length);
+//    document.getElementById('random-link').innerText = randomTexts[randomIndex];
+//};
+
+
+// Function to change the link text to a random one
+function randomizeText() {
+    const randomIndex = Math.floor(Math.random() * randomTexts.length);
+    document.getElementById('random-link').innerText = randomTexts[randomIndex];
+}
 
 function showContent(id) {
     var contents = document.querySelectorAll('.tab-content');
@@ -113,21 +132,16 @@ document.getElementById('key-input').addEventListener('input', function() {
 //     checkFaviconAndRedirect();
 // });
 
-const randomTexts = [
-    'Shell Shockers coming soon!',
-    'V2 coming!',
-    'THIS IS NOT A COPY, IT IS ORIGINAL WORK',
-    'Fun website'
-];
+//custom cursors test
+const buttons = document.querySelectorAll('button');
 
-//window.onload = randomizeText() {
-//const randomIndex = Math.floor(Math.random() * randomTexts.length);
-//    document.getElementById('random-link').innerText = randomTexts[randomIndex];
-//};
-
-
-// Function to change the link text to a random one
-function randomizeText() {
-    const randomIndex = Math.floor(Math.random() * randomTexts.length);
-    document.getElementById('random-link').innerText = randomTexts[randomIndex];
-}
+        // Iterate over each button and add click event listener
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Get the cursor image tied to the clicked button
+                const cursorImage = button.getAttribute('data-cursor');
+                
+                // Set the cursor to the image associated with the clicked button
+                document.body.style.cursor = `url(${cursorImage}), auto`;
+            });
+        });
