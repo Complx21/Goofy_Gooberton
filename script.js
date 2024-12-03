@@ -1,22 +1,22 @@
 const randomTexts = [
+    'Best Unblocked Games Playground',
     'Shell Shockers coming soon!',
-    'V2 coming!',
-    //'THIS IS NOT A COPY, IT IS ORIGINAL WORK',
+    'V2 coming soon!',
     'Fun website',
-    'Read the notes that are placed around the site (They are there for a reason)'
+    'Read the notes that are placed around the site (They are there for a reason)',
+    'Stop saying that the sites are broken, they arent some are just down sometimes',
+    'THIS SITE IS NOT COPIED',
+    '...',
+    'Do people actually read these?',
 ];
-
-//window.onload = randomizeText() {
-//const randomIndex = Math.floor(Math.random() * randomTexts.length);
-//    document.getElementById('random-link').innerText = randomTexts[randomIndex];
-//};
-
 
 // Function to change the link text to a random one
 function randomizeText() {
     const randomIndex = Math.floor(Math.random() * randomTexts.length);
     document.getElementById('random-link').innerText = randomTexts[randomIndex];
 }
+
+window.onload = randomizeText;
 
 function showContent(id) {
     var contents = document.querySelectorAll('.tab-content');
@@ -102,36 +102,6 @@ document.getElementById('key-input').addEventListener('input', function() {
     checkKeyInput();
 });
 
-// let selectedFaviconUrl = '';
-
-// function setFavicon(icon, url) {
-//     console.log("Set Favicon called with icon:", icon, "and URL:", url); // Debugging line
-//    const link = document.querySelector("link[rel~='icon']");
-//     if (link) {
-//         link.href = icon;
-//    } else {
-//        const newLink = document.createElement('link');
-//        newLink.rel = 'icon';
-//        newLink.href = icon;
-//       document.head.appendChild(newLink);
-//    }
-//   selectedFaviconUrl = url;
-//   console.log("Favicon set:", icon, "URL set:", url); // Debugging line
-// }
-
-// function checkFaviconAndRedirect() {
-//     console.log("Current selected URL:", selectedFaviconUrl); // Debugging line
-//    if (selectedFaviconUrl) {
-//         window.location.href = selectedFaviconUrl;
-//     } else {
-//         console.log("No URL set."); // Debugging line
-//     }
-// }
-// 
-// document.getElementById('key-input').addEventListener('input', function() {
-//     checkFaviconAndRedirect();
-// });
-
 //custom cursors test
 const buttons = document.querySelectorAll('button');
 
@@ -145,3 +115,14 @@ const buttons = document.querySelectorAll('button');
                 document.body.style.cursor = `url(${cursorImage}), auto`;
             });
         });
+
+        var elem = document.getElementById("game-iframe");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
