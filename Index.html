@@ -123,7 +123,51 @@
 
 <div id="game-container" class="iframe-container" style="display:none;">
    <h3>
-   <span onclick="closeGame()" class="close-btn"><img src="https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/close.png"></span>  
+    <div class="invis-box">
+   <div class="game-menu">
+    <span onclick="closeGame()"><img src="https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/close.png"></span>  
+    <span id="fullscreen-btn"><img src="https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/icons/fullscreen.png"></span>  
+<script>
+    const gameElement = document.getElementById('game-container');
+    const fullscreenButton = document.getElementById('fullscreen-btn');
+
+    // Check for fullscreen API support
+    const isFullscreenSupported = document.documentElement.requestFullscreen || document.documentElement.mozRequestFullScreen || document.documentElement.webkitRequestFullscreen || document.documentElement.msRequestFullscreen;
+
+    if (isFullscreenSupported) {
+      fullscreenButton.addEventListener('click', () => {
+        if (gameElement.requestFullscreen) {
+          gameElement.requestFullscreen();
+        } else if (gameElement.mozRequestFullScreen) { // Firefox
+          gameElement.mozRequestFullScreen();
+        } else if (gameElement.webkitRequestFullscreen) { // Chrome, Safari
+          gameElement.webkitRequestFullscreen();
+        } else if (gameElement.msRequestFullscreen) { // IE/Edge
+          gameElement.msRequestFullscreen();
+        }
+      });
+
+      // Exit fullscreen when pressing 'Escape' (optional)
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+        }
+      });
+    } else {
+      fullscreenButton.disabled = true; // Disable the button if fullscreen isn't supported
+      alert('Fullscreen is not supported by your browser.');
+    }
+  </script>
+</div>
+
 </h3>
    <iframe id="game-iframe"></iframe>
 </div>
@@ -162,7 +206,8 @@
          <button class="button" onclick="loadGame('https://powerline.io/')">Powerline.io</button>
          <button class="button" onclick="loadGame('https://narrow.one/')">Narrow.one</button>
          <button class="button" onclick="loadGame('https://kour.io/')">kour.io</button>
-         <button class="button" onclick="loadGame('https://twoplayergames.org')">TwoPlayerGames.org</button>
+         <!-- <button class="button" onclick="loadGame('https://www.twoplayergames.org/embed/shell-shockers')">Shell Shockers</button> -->
+         <button class="button" onclick="loadGame('https://neal.fun')">Neal.fun</button>
          <button class="button" onclick="loadGame('https://littlealchemy2.com/')">Little Alchemy 2</button>
          <button class="button" onclick="loadGame('https://territorial.io')">Territorial.io</button>
          <!--
@@ -228,12 +273,9 @@
             }
         });
     </script>
-</center>
 </div>
-
-    </center>
-    
-</div>
+<br>
+<br>
 </div>
 </body>
 <div class="footer">
