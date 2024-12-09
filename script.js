@@ -81,6 +81,7 @@ function closeGame() {
     const gameIframe = document.getElementById('game-iframe');
     gameIframe.src = '';
     gameContainer.style.display = 'none';
+    document.exitFullscreen();
 }
 
 function changeFaviconAndTitle(faviconURL, titleText) {
