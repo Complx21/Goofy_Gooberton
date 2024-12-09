@@ -537,25 +537,6 @@ img {
     position: relative;
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    background: rgba(60, 58, 58, 0.085);
-    backdrop-filter: blur(13px);
-    z-index: 9999;
-    padding: 13px;
-    border-radius: 13px;
-}
-
-.close-btn-image {
-    mix-blend-mode: darken;
-}
-
 .blur {
     filter: blur(5px);
 }
@@ -616,3 +597,45 @@ box-shadow: inset 24px 24px 42px #090909,
     display: block;
     border-radius: 13px;
   }
+
+   .game-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    height: 30px;
+    background: rgba(60, 58, 58, 0.085);
+    backdrop-filter: blur(13px);
+    z-index: 9998;
+    padding: 13px;
+    border-radius: 13px;
+    display: none;
+    justify-content: space-around;
+    gap: 13px;
+    border: 1px solid;
+    transition: all 0.3s ease-in-out;
+   }
+
+   .game-menu span {
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 13px;
+   }
+
+.invis-box {
+    border: none;
+    background: none;
+    padding: 13px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    z-index: 9999;
+}
+
+.invis-box:hover .game-menu{
+    display: flex;
+}
