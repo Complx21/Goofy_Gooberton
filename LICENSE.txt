@@ -1,0 +1,19 @@
+Copyright (c) 2024 Nathan Hall
+
+All rights reserved.
+
+This repository is made available under the following terms:
+
+1. **No Commercial Use**: You may view, fork, or clone this repository for personal, educational, or non-commercial purposes. However, you may **not** use the code or any of its contents for commercial purposes, including but not limited to selling, licensing, or distributing the software in any form.
+
+2. **No Derivative Works**: You may not modify, adapt, or create derivative works based on the contents of this repository, including combining it with other code or software to create new projects.
+
+3. **No Redistribution**: You may not distribute, sublicense, or otherwise transfer copies of the software or its components, even in modified form, to others without express written permission from the copyright holder.
+
+4. **Public Access**: The repository is made publicly available solely for viewing, study, or review. Public access does not imply permission for use, redistribution, or modification beyond what is explicitly allowed in this license.
+
+5. **No Warranty**: The repository is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, or non-infringement. In no event shall the copyright holder be liable for any claim, damages, or other liability arising from the use of the repository.
+
+By accessing this repository, you agree to comply with these terms. For permission to use this repository for purposes not covered by this license, please contact the copyright holder.
+
+nathan.a4w.hall@gmail.com
