@@ -2,13 +2,14 @@
 <html lang="en" id="content">
     <head><title>Goofy Gooberton</title></head>
     <script>
+
         document.addEventListener('DOMContentLoaded', function() {
             const baseURL = 'https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/';
 
             const fileList = [
-                'script.js', // JS file
-                'style.css', // CSS file
                 'Index.html', // Main HTML file
+                'style.css', // CSS file
+                'script.js', // JS file
             ];
 
             function fetchAndInject(url, type) {
@@ -47,12 +48,11 @@
             fileList.forEach(file => {
                 if (file.endsWith('.css')) {
                     fetchAndInject(baseURL + file, 'css');
-                } else if (file.endsWith('.js')) {
-                    fetchAndInject(baseURL + file, 'js');
                 } else if (file.endsWith('.html')) {
                     fetchAndInject(baseURL + file, 'html');
+                } else if (file.endsWith('.js')) {
+                    fetchAndInject(baseURL + file, 'js');
                 }
             });
         });
     </script>
-
