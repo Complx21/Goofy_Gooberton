@@ -401,7 +401,6 @@ img {
     left: 0;
     border: none;
     z-index: 9;
-    border-radius: 13px;
     height: 100vh;
     width: 100vw;
 }
