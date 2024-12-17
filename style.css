@@ -638,3 +638,9 @@ box-shadow: inset 24px 24px 42px #090909,
 .invis-box:hover .game-menu{
     display: flex;
 }
+
+.shell-shockers-embed {
+    border-radius: 13px;
+    aspect-ratio: 16 / 9;
+    height: 450px;
+}
