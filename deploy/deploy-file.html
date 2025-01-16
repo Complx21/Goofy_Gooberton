@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delayed Load</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM fully loaded and parsed');
+
+            // Your code to hold the event
+        });
+
+        window.addEventListener('load', (event) => {
+            console.log('Page fully loaded');
+
+            // Your code to hold the event
+        });
+
+        // Automatically trigger the custom event after 3 seconds
+        setTimeout(() => {
+            const event = new Event('allowedLoad');
+            document.dispatchEvent(event);
+        }, 3000);
+
+        // Listen for custom event
+        document.addEventListener('allowedLoad', (event) => {
+            console.log('Custom event triggered, now allowing the load to complete');
+
+
+            const baseURL = 'https://raw.githubusercontent.com/Complx21/Goofy_Gooberton/main/';
+
+const fileList = [
+    'deploy/update.html', // Main HTML file
+];
+
+function fetchAndInject(url, type) {
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            if (type === 'css') {
+                const style = document.createElement('style');
+                style.textContent = data;
+                document.head.appendChild(style);
+            } else if (type === 'js') {
+                const script = document.createElement('script');
+                script.textContent = data;
+                document.body.appendChild(script);
+            } else if (type === 'html') {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const contentDiv = document.createElement('div');
+                contentDiv.innerHTML = doc.body.innerHTML;
+                document.body.appendChild(contentDiv);
+
+                // Inject head elements
+                Array.from(doc.head.children).forEach(child => {
+                    document.head.appendChild(child);
+                });
+            }
+        })
+        .catch(error => console.error(`Error loading ${type.toUpperCase()}:`, error));
+}
+
+fileList.forEach(file => {
+    if (file.endsWith('.css')) {
+        fetchAndInject(baseURL + file, 'css');
+    } else if (file.endsWith('.html')) {
+        fetchAndInject(baseURL + file, 'html');
+    } else if (file.endsWith('.js')) {
+        fetchAndInject(baseURL + file, 'js');
+    }
+});
+});
+        });
+    </script>
+</head>
+<body>
+    <h1>Hold the Load</h1>
+</body>
+</html>
