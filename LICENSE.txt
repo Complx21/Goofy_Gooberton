@@ -1,4 +1,4 @@
-Copyright (c) 2024 Nathan Hall
+Copyright (c) 2024-2025 Nathan Hall
 
 All rights reserved.
 
